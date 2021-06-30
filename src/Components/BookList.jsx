@@ -1,4 +1,6 @@
 import { Typography, Card, CardActions, CardContent, CardMedia,  Grid, } from '@material-ui/core'
+import { useState } from 'react';
+import { useEffect } from 'react';
 import useStyles from '../styles';
 import EditBook from './EditBookModal';
 import ViewBook from './ViewBook'
@@ -7,7 +9,6 @@ import ViewBook from './ViewBook'
 
 
 const Book = ({books, title}) => {
-    
     const classes = useStyles();
 
 
@@ -21,8 +22,8 @@ const Book = ({books, title}) => {
                     {title}
             </Typography>
         <Grid container spacing={4} className={classes.cardContainer}>
-            {books.map((item) => (
-                <Grid item key={books} xs={12} sm={6} md={4}>
+            {books.map((item, i) => (
+                <Grid item key={`book-${i}`} xs={12} sm={6} md={4}>
                     <Card className={classes.card}>
                         <CardContent className={classes.cardContent}>
                             <CardMedia className={classes.CardMedia} image={item.bookCover} title={item.title}>
@@ -35,7 +36,7 @@ const Book = ({books, title}) => {
                                           {item.description}
                             </Typography>
                             <CardActions>
-                                <ViewBook />
+                                <ViewBook book={item} />
                                     <EditBook />
                                 </CardActions>
                         </CardContent>

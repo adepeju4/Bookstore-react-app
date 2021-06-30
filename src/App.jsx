@@ -16,7 +16,7 @@ function App() {
             <Route path="/books">
             <Home />
             </Route>
-            <Route>
+            <Route path="/signup">
               <SignUp />
             </Route>
           </Switch>

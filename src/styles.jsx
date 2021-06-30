@@ -29,13 +29,15 @@ const useStyles = makeStyles((theme)=> ({
   
   homelink: {
     textDecoration: "underline",
-    cursor: "context-menu"
+    cursor: "context-menu",
+    color: "#707070"
   },
-
+  
   logoutLink: {
+    textDecoration: "none",
+    color: "#3f51b5",
      '&:hover': {
         
-       textDecoration: "none",
        cursor: "pointer"
 
     },

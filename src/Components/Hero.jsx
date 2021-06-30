@@ -6,7 +6,7 @@ import Logout from './Breadcrumbs';
 
 
 
-const Hero = () => {
+const Hero = ({ filterBooks }) => {
   const classes = useStyles();
     return (
       <Container max-width="sm">
@@ -26,7 +26,7 @@ const Hero = () => {
                 </Grid>
                 <Grid item>
 
-                <SearchHandler />
+                <SearchHandler filterBooks={filterBooks} />
                 </Grid>
               </Grid>
             </div>

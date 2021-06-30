@@ -1,6 +1,6 @@
 // import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 import { Container } from '@material-ui/core';
 
 import useStyles from '../styles';
@@ -11,10 +11,10 @@ const Logout = () => {
     <Container className={classes.logout}>
           <Breadcrumbs aria-label="breadcrumb" className={classes.breadcrumb} >
     
-       <Link color="primary" href="/" className={classes.homelink} >
+       <Link to="/books" className={classes.homelink} >
         Home
       </Link>
-      <Link color="inherit" href="/" className={classes.logoutLink}>
+      <Link to="/signup" className={classes.logoutLink}>
         logout
       </Link>
      

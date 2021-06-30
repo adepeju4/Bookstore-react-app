@@ -11,7 +11,7 @@ import useStyles from '../styles';
 import BookPreview from './BookPreview';
 
 
-const ViewBook = () => {
+const ViewBook = ({ book }) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
 
@@ -48,7 +48,7 @@ const ViewBook = () => {
             
           }}>
               <Grid>
-                <BookPreview />
+                <BookPreview title={book.title} desc={book.description} cover={book.bookCover}/>
               </Grid>
              
           </div>

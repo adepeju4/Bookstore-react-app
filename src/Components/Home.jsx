@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react'
 import { CssBaseline, Container, Typography } from '@material-ui/core';
 
 
@@ -10,24 +11,28 @@ import useFetch from '../Hooks/useFetch';
 
 
 const Home = () => {
-    const { data: books, loading, error } = useFetch('http://localhost:8000/books');
-
-
+const [books, setBooks] = useState([])  
+const { data: allBooks, loading, error } = useFetch('http://localhost:8000/books');
 const classes = useStyles();
-
-  
+const filterBooks  = (e) => {
+  const searchTerm = e.target.value
+  return setBooks(() => {
+    return allBooks.filter(book => {
+      let regex = new RegExp(searchTerm, 'gi')  
+      return regex.test(book.title)
+    })
+  })
+}
+useEffect(()=>{
+  setBooks(allBooks)
+}, [allBooks])
   return (
     <div className="App">
     <>
-          <CssBaseline />
-       
-        
-
-
-
+      <CssBaseline />
         <main className="main">
           <div className={classes.container}>
-            <Hero />
+            <Hero filterBooks={filterBooks} />
           </div>
           <Container className={classes.cardGrid} maxWidth="md">
             {error && <center>{error}</center>}
