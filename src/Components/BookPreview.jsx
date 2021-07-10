@@ -1,13 +1,9 @@
 import { Container, Typography } from '@material-ui/core'
-// import { useParams } from 'react-router-dom';
-// import useFetch from '../Hooks/useFetch';
 import useStyles from '../styles';
 
 
 const BookPreview = ({title, desc, cover}) => {
     const classes = useStyles();
-    // const {id} = useParams();
-    // const {data, error, loading} = useFetch(`http://localhost:8000/books/${id}`)
 
   
     return (
@@ -17,7 +13,6 @@ const BookPreview = ({title, desc, cover}) => {
         <Container >
         <div className="preview" style={{
                 display: "flex",
-                height: "85vh",
                 flexDirection: "column"
         }}>
 

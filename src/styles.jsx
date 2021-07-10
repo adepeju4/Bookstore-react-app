@@ -102,6 +102,7 @@ const useStyles = makeStyles((theme)=> ({
     justifyContent: 'center',
   },
   paper: {
+    
     backgroundColor: theme.palette.background.paper,
     border: '1px solid #eee',
     boxShadow: theme.shadows[5],
@@ -155,6 +156,91 @@ const useStyles = makeStyles((theme)=> ({
       width: "600px",
     },
   },
+
+  formroot: {
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            width: '50ch'
+        },
+    },
+
+    uploadButton: {
+        '&:hover': {
+            background: "none",
+
+        },
+    },
+    submit: {
+        margin: theme.spacing(1),
+        width: "8rem",
+        display: "flex",
+        alignSelf: "flex-end"
+    },
+    formHeader: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
+    iconX: {
+        height: "30px",
+        '&:before': {
+            width: "20px",
+            height: "3px",
+            backgroundColor: "#3f51b5",
+            content: "''",
+            position: "absolute",
+            display: "block",
+            transition: "all 0.25s ease-out",
+            transform: "rotate(-45deg)"
+        },
+        '&:after': {
+            width: "20px",
+            height: "3px",
+            backgroundColor: "#3f51b5",
+            content: "''",
+            position: "absolute",
+            display: "block",
+            transition: "all 0.25s ease-out",
+            transform: "rotate(-135deg)"
+        },
+        '&:hover': {
+            backgroundColor: "transparent",
+            '&:after': {
+                transform: "rotate(0deg)"
+            },
+            '&:before': {
+                transform: "rotate(0deg)"
+            }
+        }
+    },
+    formBody: {
+        display: "flex",
+        flexDirection: "column"
+  },
+     editroot: {
+    '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            width: '50ch'
+    },
+    },
+
+    editUploadButton: {
+        '&:hover': {
+        background: "none",
+
+        },
+    },
+    editSubmit: {
+        margin: theme.spacing(1),
+        width: "10rem",
+        display: "flex",
+        alignSelf: "flex-end"
+    },
+    editFormBody: {
+        display: "flex",
+        flexDirection: "column",
+    },
 
   previewImage: {
     width: "80%",

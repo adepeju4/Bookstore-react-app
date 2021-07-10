@@ -1,6 +1,4 @@
 import { Typography, Card, CardActions, CardContent, CardMedia,  Grid, } from '@material-ui/core'
-import { useState } from 'react';
-import { useEffect } from 'react';
 import useStyles from '../styles';
 import EditBook from './EditBookModal';
 import ViewBook from './ViewBook'
