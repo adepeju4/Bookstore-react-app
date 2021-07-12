@@ -24,7 +24,7 @@ const Book = ({books, title}) => {
                 <Grid item key={`book-${i}`} xs={12} sm={6} md={4}>
                     <Card className={classes.card}>
                         <CardContent className={classes.cardContent}>
-                            <CardMedia className={classes.CardMedia} image={item.bookCover} title={item.title}>
+                            <CardMedia className={classes.CardMedia} image={'http://localhost:4000/bookCovers/' + item.bookCover} title={item.title}>
                             </CardMedia>
 
                             <Typography gutterBottom variant="h5" className={classes.title}>

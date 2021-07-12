@@ -45,22 +45,23 @@ const AddBook = () => {
     }
 
     const handleSubmit = (e) => {
-        const book = { title, bookCover, description };
+      // const book = {title, bookCover, description}  
+      // console.log(bookCover, 'lets see')
       e.preventDefault();
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('bookCover', bookCover);
       
-      fetch('http://localhost:8000/books', {
+      fetch('http://localhost:4000/books/create', {
         method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(book)
+        // headers: { "Content-Type": "application/json" },
+        body: formData
       }).then(() => {
         console.log('new book added')
       });
-      
       handleClose();
-     
     }
-
-    
 
     const classes = useStyles();
 
@@ -78,9 +79,9 @@ const AddBook = () => {
                 <br /> 
             <div className={classes.formBody}>
                
-                    <TextField required id="standard-required" label="Book Title" style={{ width: "80%" }} onChange={ (e) => setTitle(e.target.value)}/>
+                    <TextField required label="Book Title" style={{ width: "80%" }} onChange={ (e) => setTitle(e.target.value)}/>
               
-                    <TextField required id="standard-required" label="Description" style={{marginTop: "20px", width: "100%"}} onChange={ (e) => setDescription(e.target.value)}/>
+                    <TextField required label="Description" style={{marginTop: "20px", width: "100%"}} onChange={ (e) => setDescription(e.target.value)}/>
                     
                     
                     <input accept="image/*" className={classes.input} id="icon-button-file" type="file" onChange={(e) => setBookCover(e.target.files[0])}  style={{marginTop: "25px"}}/>

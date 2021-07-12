@@ -17,7 +17,7 @@ import useFetch from '../Hooks/useFetch';
 
 const Home = () => {
 const [books, setBooks] = useState([])  
-const { data: allBooks, loading, error } = useFetch('http://localhost:8000/books');
+const { data: allBooks, loading, error } = useFetch('http://localhost:4000/books/list');
 const classes = useStyles();
 const filterBooks  = (e) => {
   const searchTerm = e.target.value
